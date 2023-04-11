@@ -3,8 +3,8 @@ import { Store } from '@ngrx/store';
 import { AppState } from './store/model/app-state.model';
 import { Observable } from 'rxjs';
 import { ShoppingItem } from './store/model/shoping-items.model';
-import { AddItemAction } from './store/actions/shopping.actions';;
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AddItemAction } from './store/actions/shopping.actions'; import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.shoppingItems$ = this.store.select(store => store.shopping);
     this.myForm = this.fb.group({
       name: ["", Validators.required],
-      id: ["",Validators.required]
+      id: ["", Validators.required]
     });
   };
 

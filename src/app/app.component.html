@@ -1,20 +1,19 @@
-
 <div class="container">
-  <div class="store" *ngFor="let shopping of shoppingItems$ |async">
-      <h3> Name: {{shopping.name}}  </h3>
-      <h5>Id:{{shopping.id}}</h5>
-  </div>
- <div class="form">
-  <form class="form" [formGroup]="myForm" (ngSubmit)="addItem()">
-      <label>
-          Name:
-          <input type="text" formControlName="name" placeholder="name">
-      </label>
-      <label>
-          Id:
-          <input type="text" formControlName="id" placeholder="id">
-      </label>
-      <button type="submit" [disabled]="!myForm.valid">Add</button>
-  </form>
- </div>
+    <div class="store" *ngFor="let shopping of shoppingItems$ |async">
+        <h3> Name: {{shopping.name}} </h3>
+        <h5>Id:{{shopping.id}}</h5>
+    </div>
+    <div class="form">
+        <form class="form" [formGroup]="myForm" (ngSubmit)="addItem()">
+            <label>
+                Name:
+                <input type="text" formControlName="name" placeholder="name">
+            </label>
+            <label>
+                Id:
+                <input type="text" formControlName="id" placeholder="id">
+            </label>
+            <button type="submit" [disabled]="!myForm.valid">Add</button>
+        </form>
+    </div>
 </div>

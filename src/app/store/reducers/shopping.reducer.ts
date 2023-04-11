@@ -14,8 +14,8 @@ const initialState: Array<ShoppingItem> = [
 //action uzima shopingActions iz shoppActions.ts
 export function ShoppingReducer(
     state: Array<ShoppingItem> = initialState,
-     action: ShoppingAction,
-     ) {
+    action: ShoppingAction,
+) {
     switch (action.type) {
         //swhitch vrsta akcije je ako se poklopi sa ShoppingActionTypes.ADD_ITEM a hoce jer je type iz actionts.ts zapravo ShoppingActionTypes.ADD_ITEM
         case ShoppingActionTypes.ADD_ITEM:
