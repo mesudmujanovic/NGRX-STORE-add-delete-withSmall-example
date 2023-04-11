@@ -6,6 +6,7 @@ import { StoreModule} from '@ngrx/store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingReducer } from './store/reducers/shopping.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     StoreModule.forRoot({
       shopping:ShoppingReducer
     }),

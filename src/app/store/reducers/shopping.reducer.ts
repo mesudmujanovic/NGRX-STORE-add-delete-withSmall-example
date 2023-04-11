@@ -21,6 +21,8 @@ export function ShoppingReducer(
         case ShoppingActionTypes.ADD_ITEM:
             return [...state, action.payload];
         //...state (vraca sve stavke), action.payload(plus vraca nove koja je prosledjena)
+        case ShoppingActionTypes.DELETE_ITEM:
+            return state.filter(item=> item.id !== action.payload);
         default:
             return state;
         //ako se ne ispuni prvi uslov vraca state tj intialState ono sto ima

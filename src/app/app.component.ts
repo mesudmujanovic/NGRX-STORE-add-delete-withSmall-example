@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from './store/model/app-state.model';
 import { Observable } from 'rxjs';
 import { ShoppingItem } from './store/model/shoping-items.model';
-import { AddItemAction } from './store/actions/shopping.actions'; import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AddItemAction, DeleteItemAction } from './store/actions/shopping.actions'; import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -31,4 +31,8 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new AddItemAction(newShoppingItem));
     this.myForm.reset();
   }
+
+  deleteItem(id:string){
+    this.store.dispatch(new DeleteItemAction(id))
+  };
 }

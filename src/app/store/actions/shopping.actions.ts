@@ -3,6 +3,7 @@ import { ShoppingItem } from "../model/shoping-items.model";
 
 export enum ShoppingActionTypes {
     ADD_ITEM = '[SHOPPING] Add item',
+    DELETE_ITEM = '[SHOPPING] Delete item',
 };
 
 export class AddItemAction implements Action {
@@ -12,4 +13,10 @@ export class AddItemAction implements Action {
     //payload je nova stavka koja se dodaje
 }
 
-export type ShoppingAction = AddItemAction;
+export class DeleteItemAction implements Action{
+    readonly type = ShoppingActionTypes.DELETE_ITEM;
+
+    constructor(public payload:string){}
+}
+
+export type ShoppingAction = AddItemAction | DeleteItemAction;
